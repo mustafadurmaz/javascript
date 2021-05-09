@@ -12,11 +12,12 @@ Kazanımlar:
         .then(data=>console.log(data))
         .catch(err=>console.log(err));
         } 
-        ```
+       
 - toFixed(): Kendisine parametre olarak verilen değer ile sayının ondalık hanesinde kaç basamak olacağını belirler.
-    ```let test=213.73145;
+    ```sh
+       let test=213.73145;
        document.write(test.toFixed(2));
-       Output: 213.73 ```
+       Output: 213.73
 
 [Live Demo](https://mustafadurmaz.github.io/projects/javascript/exchange_rate_calculator/)
 
