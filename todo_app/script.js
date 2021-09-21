@@ -4,6 +4,7 @@ const todosUL=document.getElementById('todos');
 
 const silBtn=document.getElementById('sil');
 
+
 const todos=JSON.parse(localStorage.getItem('todos'));
 
 if(todos){
@@ -41,17 +42,19 @@ function addTodo(todo){
             todoE1.classList.add('completed');
         }
 
-        todoE1.innerHTML=todoText+`<button onclick="sil()" class="sil">sil</button>`;
-
+        
+        const todoE2=document.querySelectorAll('li');
+        todoE1.innerText=todoText;
+        
         
         todoE1.addEventListener('click',()=>{
             todoE1.classList.toggle('completed');
             updateLS();
         });
 
-        
-
-           
+        silBtn.addEventListener('click',()=>{
+            todoE1.remove();
+        })
         
 
         todosUL.appendChild(todoE1);
@@ -59,6 +62,9 @@ function addTodo(todo){
 
         updateLS();
     }
+        var deleteButton = document.createElement('button');
+        deleteButton.innerText = "Delete"; 
+        deleteButton.className = "delete";
 }
 
 function updateLS(){
@@ -78,12 +84,6 @@ function updateLS(){
 }
 
 
-function sil() {
-    
-    const todoE2=document.querySelector('li');
-    todoE2.remove();
-    updateLS();
-}
 
 
 
